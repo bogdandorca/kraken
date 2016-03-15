@@ -1,0 +1,9 @@
+{
+    "__list_of_linters": "https://github.com/lesshint/lesshint/blob/master/lib/linters/README.md",
+    "duplicateProperty": false,
+    "excludedFiles": ["responsive.less"],
+    "qualifyingElement": {
+        "allowWithClass": true
+    },
+    "zeroUnit": "no_unit"
+}
