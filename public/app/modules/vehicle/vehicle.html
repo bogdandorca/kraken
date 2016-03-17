@@ -1,0 +1,7 @@
+<h1>Vehicles Available</h1>
+<ul>
+    <li *ngFor="#vehicle of vehicles">{{vehicle.name}}</li>
+</ul>
+
+<p *ngIf="vehicles.length">You have {{vehicles.length}} vehicles.</p>
+<p *ngIf="vehicles.length >= 2">Rich bastard!</p>

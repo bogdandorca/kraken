@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+
+    <title>Hello JS</title>
+
+    <script src="./jspm_packages/system.js"></script>
+    <script src="./config.js"></script>
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            typescriptOptions: { emitDecoratorMetadata: true },
+            packages: {
+                'api': {defaultExtension: 'ts'},
+                'app': {defaultExtension: 'ts'}
+            }
+        });
+        System.import('app/main')
+                .then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+    <kr-vehicle></kr-vehicle>
+    <kr-username></kr-username>
+</body>
+</html>
