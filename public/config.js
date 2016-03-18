@@ -2,9 +2,35 @@ System.config({
   baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "typescript",
+  babelOptions: {
+    "optional": [
+      "runtime"
+    ],
+    "stage": 1
+  },
+  traceurOptions: {
+    "annotations": true,
+    "memberVariables": true,
+    "types": true
+  },
+  typescriptOptions: {
+    "module": "commonjs",
+    "emitDecoratorMetadata": true
+  },
   paths: {
     "npm:*": "jspm_packages/npm/*",
     "github:*": "jspm_packages/github/*"
+  },
+
+  packages: {
+    "app": {
+      "main": "main",
+      "defaultExtension": "js"
+    }
+  },
+  compilerOptions: {
+    "target": "ES6",
+    "module": "system"
   },
 
   map: {
@@ -15,7 +41,7 @@ System.config({
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
     "text": "github:systemjs/plugin-text@0.0.7",
     "typescript": "npm:typescript@1.8.7",
-    "zone.js": "npm:zone.js@0.6.4",
+    "zone.js": "npm:zone.js@0.5.10",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -307,11 +333,12 @@ System.config({
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
     },
-    "npm:zone.js@0.5.15": {
+    "npm:zone.js@0.5.10": {
       "es6-promise": "npm:es6-promise@3.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:zone.js@0.6.4": {
+    "npm:zone.js@0.5.15": {
+      "es6-promise": "npm:es6-promise@3.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     }
   }
