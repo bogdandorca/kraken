@@ -40,5 +40,8 @@
   },
   "dependencies": {
     "jspm": "^0.16.31"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
