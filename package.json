@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Cooking application",
   "main": "index.js",
+  "engines": {
+    "node": "6.0.x"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -40,11 +43,15 @@
   },
   "dependencies": {
     "colors": "^1.1.2",
-    "jspm": "^0.16.31"
+    "jspm": "^0.16.31",
+    "koa": "^1.2.0",
+    "koa-static": "^2.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-help": "^1.6.1",
-    "gulp-sass": "^2.2.0"
+    "gulp-sass": "^2.2.0",
+    "kcors": "^1.2.1",
+    "koa-cors": "0.0.16"
   }
 }
