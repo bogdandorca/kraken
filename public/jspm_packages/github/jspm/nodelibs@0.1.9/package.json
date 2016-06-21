@@ -1,0 +1,117 @@
+{
+  "main": false,
+  "dependencies": {},
+  "map": {
+    "./assert.js": {
+      "node": "@node/assert"
+    },
+    "./buffer.js": {
+      "node": "./buffer.js",
+      "browser": "buffer-browserify"
+    },
+    "./child_process.js": {
+      "node": "@node/child_process"
+    },
+    "./cluster.js": {
+      "node": "@node/cluster"
+    },
+    "./console.js": {
+      "node": "@node/console"
+    },
+    "./constants.js": {
+      "node": "@node/constants"
+    },
+    "./crypto.js": {
+      "node": "@node/crypto",
+      "browser": "crypto-browserify"
+    },
+    "./dgram.js": {
+      "node": "@node/dgram"
+    },
+    "./dns.js": {
+      "node": "@node/dns"
+    },
+    "./domain.js": {
+      "node": "@node/domain",
+      "browser": "domain-browserify"
+    },
+    "./events.js": {
+      "node": "@node/events"
+    },
+    "./fs.js": {
+      "node": "@node/fs"
+    },
+    "./http.js": {
+      "node": "@node/http",
+      "browser": "http-browserify"
+    },
+    "./https.js": {
+      "node": "@node/https"
+    },
+    "./isBuffer.js": {
+      "~node": "./isBufferBrowser.js"
+    },
+    "./module.js": {
+      "node": "@node/module",
+      "browser": "@empty"
+    },
+    "./net.js": {
+      "node": "@node/net"
+    },
+    "./os.js": {
+      "node": "@node/os",
+      "browser": "os-browserify"
+    },
+    "./path.js": {
+      "node": "@node/path"
+    },
+    "./process.js": {
+      "node": "./process-node.js"
+    },
+    "./punycode.js": {
+      "node": "@node/punycode",
+      "browser": "punycode-browserify"
+    },
+    "./querystring.js": {
+      "node": "@node/querystring"
+    },
+    "./readline.js": {
+      "node": "@node/readline"
+    },
+    "./repl.js": {
+      "node": "@node/repl"
+    },
+    "./stream.js": {
+      "node": "@node/stream",
+      "browser": "stream-browserify"
+    },
+    "./string_decoder": {
+      "node": "@node/string_decoder",
+      "browser": "string_decoder-browserify"
+    },
+    "./timers.js": {
+      "node": "@node/timers",
+      "browser": "timers-browserify"
+    },
+    "./tls.js": {
+      "node": "@node/tls"
+    },
+    "./tty.js": {
+      "node": "@node/tty"
+    },
+    "./url.js": {
+      "node": "@node/url",
+      "browser": "url-browserify"
+    },
+    "./util.js": {
+      "node": "@node/util"
+    },
+    "./vm.js": {
+      "node": "@node/vm"
+    },
+    "./zlib.js": {
+      "node": "@node/zlib",
+      "browser": "zlib-browserify"
+    }
+  }
+}

@@ -29,23 +29,31 @@
       "baseURL": "public"
     },
     "dependencies": {
+      "angular": "github:angular/bower-angular@^1.5.7",
+      "angular-route": "github:angular/bower-angular-route@^1.5.7",
       "angular2": "npm:angular2@^2.0.0-beta.9",
-      "core-js": "npm:core-js@^2.2.0",
+      "babel": "npm:babel-core@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4",
       "css": "github:systemjs/plugin-css@^0.1.20",
       "es6-shim": "github:es-shims/es6-shim@^0.35.0",
+      "nodelibs": "github:jspm/nodelibs@^0.1.9",
       "reflect-metadata": "npm:reflect-metadata@^0.1.3",
       "text": "github:systemjs/plugin-text@^0.0.7",
       "zone.js": "npm:zone.js@0.5.10"
     },
     "devDependencies": {
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
       "typescript": "npm:typescript@^1.6.2"
     }
   },
   "dependencies": {
     "colors": "^1.1.2",
+    "css": "^2.2.1",
+    "graceful-fs": "^4.1.4",
     "jspm": "^0.16.31",
     "koa": "^1.2.0",
-    "koa-static": "^2.0.0"
+    "koa-static": "^2.0.0",
+    "text": "^0.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

@@ -5,25 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width" initial-scale="1">
 
-    <title>Hello JS</title>
+    <title>Kraken</title>
 
     <script src="jspm_packages/npm/zone.js@0.5.10/dist/zone.js"></script>
     <script src="./jspm_packages/system.js"></script>
     <script src="./config.js"></script>
     <script>
-        System.config({
-            transpiler: 'typescript',
-            typescriptOptions: { emitDecoratorMetadata: true },
-            packages: {
-                'api': {defaultExtension: 'ts'},
-                'app': {defaultExtension: 'ts'}
-            }
-        });
-        System.import('app/main')
+        System.import('app/bootstrap.js')
                 .then(null, console.error.bind(console));
     </script>
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <div ng-view></div>
 </body>
 </html>
