@@ -14,9 +14,10 @@ class InputComponent {
         this.controller = controller;
         this.controllerAs = '$ctrl';
         this.bindings = {
-            name: '=',
-            type: '=',
-            title: '='
+            name: '@',
+            type: '@',
+            title: '@',
+            model: '='
         };
         this.template = template;
     }

@@ -1,7 +1,16 @@
 <form>
-    <input-component type="'text'" name="'firstName'" title="'First Name'"></input-component>
-    <input-component type="'text'" name="'lastName'" title="'Last Name'"></input-component>
-    <input-component type="'email'" name="'email'" title="'Email'"></input-component>
-    <input-component type="'password'" name="'password'" title="'Password'"></input-component>
-    <input-component type="'password'" name="'passwordConfirmation'" title="'Password Confirmation'"></input-component>
+    <div class="row">
+        <div class="col-md-6">
+            <input-component type="email" model="$ctrl.user.email" name="email" title="Email"></input-component>
+            <input-component type="text" model="$ctrl.user.firstName" name="firstName" title="First Name"></input-component>
+            <input-component type="text" model="$ctrl.user.lastName" name="lastName" title="Last Name"></input-component>
+            <input-component type="password" model="$ctrl.user.password" name="password" title="Password"></input-component>
+            <input-component type="password" model="$ctrl.user.passwordConfirmation" name="passwordConfirmation" title="Password Confirmation"></input-component>
+
+            <button type="submit" ng-click="$ctrl.register()" ng-submit="$ctrl.register()" class="btn btn-primary">Register</button>
+        </div>
+        <div class="col-md-6">
+            <!-- Social network login -->
+        </div>
+    </div>
 </form>

@@ -5,7 +5,7 @@ class RegisterComponent {
     constructor() {
         this.template = template;
         this.controller = controller;
-        this.controllerAs = 'vm';
+        this.controllerAs = '$ctrl';
     }
 }
 
