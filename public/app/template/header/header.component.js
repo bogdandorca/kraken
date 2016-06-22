@@ -6,7 +6,7 @@ class HeaderComponent {
         this.template = template;
         this.controllerAs = '$ctrl';
         this.bindings = {
-            title: '='
+            title: '@'
         };
     }
 }

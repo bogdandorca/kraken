@@ -1,7 +1,7 @@
 var config = function($routeProvider) {
     $routeProvider
         .when('/', {
-            template: '<register-page></register-page>'
+            template: '<home-page></home-page>'
         })
         .otherwise({
             redirectTo: '/'

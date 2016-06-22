@@ -2,7 +2,7 @@
  * Angular module for page components like 'register', 'login'
  */
 
-import registerPage from './register/register.component';
+import homePage from './home/home.component';
 
 export default angular.module('pages', [])
-    .component('registerPage', registerPage);
+    .component('homePage', homePage);
