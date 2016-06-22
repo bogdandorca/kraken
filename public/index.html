@@ -7,6 +7,9 @@
 
     <title>Kraken</title>
 
+    <link rel="stylesheet" href="./jspm_packages/github/twbs/bootstrap@3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+
     <script src="jspm_packages/npm/zone.js@0.5.10/dist/zone.js"></script>
     <script src="./jspm_packages/system.js"></script>
     <script src="./config.js"></script>
@@ -16,6 +19,7 @@
     </script>
 </head>
 <body>
-    <div ng-view></div>
+    <navbar-component></navbar-component>
+    <div class="view-body container" ng-view></div>
 </body>
 </html>

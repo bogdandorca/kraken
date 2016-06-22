@@ -1,16 +1,20 @@
+/*
+ * Main module that integrates all the libraries and the adjacent modules
+ */
+
+// Angular libraries
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import routes from './routes';
 
-// Pages
-import registerPage from './pages/register/register.component';
+// Modules
+import templateComponents from './template/template.module';
+import components from './components/components.module';
+import pages from './pages/pages.module';
 
-// Components
-import inputComponent from './components/input/input.component';
-import registerComponent from './components/register/register.component';
-
-export default angular.module('app', [ 'ngRoute' ])
-    .component('inputComponent', inputComponent)
-    .component('registerComponent', registerComponent)
-    .component('registerPage', registerPage)
+export default angular.module('app', [
+    'ngRoute',
+    templateComponents.name,
+    components.name,
+    pages.name ])
     .config(routes);

@@ -30,9 +30,11 @@ System.config({
     "angular2": "npm:angular2@2.0.0-beta.9",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
+    "bootstrap": "github:twbs/bootstrap@3.3.6",
     "core-js": "npm:core-js@1.2.6",
     "css": "github:systemjs/plugin-css@0.1.20",
     "es6-shim": "github:es-shims/es6-shim@0.35.0",
+    "jquery": "npm:jquery@3.0.0",
     "nodelibs": "github:jspm/nodelibs@0.1.9",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
     "text": "github:systemjs/plugin-text@0.0.7",
@@ -73,6 +75,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:twbs/bootstrap@3.3.6": {
+      "jquery": "npm:jquery@3.0.0"
     },
     "npm:angular2@2.0.0-beta.9": {
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
@@ -248,6 +253,9 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:jquery@3.0.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:miller-rabin@4.0.0": {
       "bn.js": "npm:bn.js@4.11.0",

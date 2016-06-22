@@ -1,6 +1,6 @@
 class InputController {
     constructor() {
-        this.name = 'Ana Are Mere';
+
     }
 }
 
