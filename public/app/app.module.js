@@ -5,6 +5,7 @@
 // Angular libraries
 import angular from 'angular';
 import ngRoute from 'angular-route';
+import ngMaterial from 'angular-material';
 import routes from './routes';
 
 // Modules
@@ -15,6 +16,7 @@ import services from './services/services.module';
 
 export default angular.module('app', [
     'ngRoute',
+    'ngMaterial',
     templateComponents.name,
     components.name,
     pages.name,

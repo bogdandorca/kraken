@@ -26,6 +26,7 @@ System.config({
 
   map: {
     "angular": "github:angular/bower-angular@1.5.7",
+    "angular-material": "github:angular/bower-material@1.0.9",
     "angular-route": "github:angular/bower-angular-route@1.5.7",
     "angular2": "npm:angular2@2.0.0-beta.9",
     "babel": "npm:babel-core@5.8.38",
@@ -41,8 +42,20 @@ System.config({
     "text": "github:systemjs/plugin-text@0.0.7",
     "typescript": "npm:typescript@1.8.7",
     "zone.js": "npm:zone.js@0.5.10",
+    "github:angular/bower-angular-animate@1.5.7": {
+      "angular": "github:angular/bower-angular@1.5.7"
+    },
+    "github:angular/bower-angular-aria@1.5.7": {
+      "angular": "github:angular/bower-angular@1.5.7"
+    },
     "github:angular/bower-angular-route@1.5.7": {
       "angular": "github:angular/bower-angular@1.5.7"
+    },
+    "github:angular/bower-material@1.0.9": {
+      "angular": "github:angular/bower-angular@1.5.7",
+      "angular-animate": "github:angular/bower-angular-animate@1.5.7",
+      "angular-aria": "github:angular/bower-angular-aria@1.5.7",
+      "css": "github:systemjs/plugin-css@0.1.23"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"

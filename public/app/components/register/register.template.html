@@ -7,8 +7,14 @@
             <input-component type="password" model="$ctrl.user.password" name="password" title="Password"></input-component>
             <input-component type="password" model="$ctrl.user.passwordConfirmation" name="passwordConfirmation" title="Password Confirmation"></input-component>
 
-            <button type="submit" ng-click="$ctrl.register()" ng-submit="$ctrl.register()" class="btn btn-primary">Register</button>
-            <button type="button" ng-click="$ctrl.closeModal()" class="btn btn-danger">Cancel</button>
+            <button class="md-raised md-primary md-button md-ink-ripple" ng-click="$ctrl.register()" type="submit" ng-transclude="" aria-label="Primary">
+                <span class="ng-scope">Register</span>
+                <div class="md-ripple-container"></div>
+            </button>
+            <button class="md-raised md-primary md-button md-ink-ripple" ng-click="$ctrl.closeModal()" type="button" ng-transclude="" aria-label="Primary">
+                <span class="ng-scope">Close</span>
+                <div class="md-ripple-container"></div>
+            </button>
         </div>
     </div>
 </form>
