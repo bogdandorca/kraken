@@ -1,0 +1,15 @@
+<div class="modal-container">
+    <div class="modal" ng-if="$ctrl.getState() === 'opened'">
+        <header>
+            <h2>{{$ctrl.title}}</h2>
+            <div class="close" ng-click="$ctrl.closeModal()">
+                <i class="fa fa-times"></i>
+            </div>
+        </header>
+        <main ng-transclude></main>
+        <footer>
+
+        </footer>
+    </div>
+</div>
+<div class="tint" ng-if="$ctrl.getState() === 'opened'"></div>

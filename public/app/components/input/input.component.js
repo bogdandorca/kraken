@@ -7,6 +7,7 @@ import './input.style.css!css';
  * @property: 'name' - The name used for the name of the input, will also be used as an ID
  * @property: 'type' - The type of the input
  * @property: 'title' - The label attributed to the input
+ * @property: 'model' - A variable from the controller that will contain the value of the input
  */
 
 class InputComponent {

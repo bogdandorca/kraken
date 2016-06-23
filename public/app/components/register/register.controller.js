@@ -1,5 +1,6 @@
 class RegisterController {
-    constructor() {
+    constructor($omd) {
+        this._orcModal = $omd;
         this.user = {
             email: '',
             firstName: '',
@@ -9,10 +10,15 @@ class RegisterController {
         };
     }
 
+    closeModal() {
+        this._orcModal.closeModal('register');
+    }
     register() {
         // TODO: Angular validation
         console.log(this.user);
     }
 }
+
+RegisterController.$inject = [ '$omd' ];
 
 export default RegisterController;

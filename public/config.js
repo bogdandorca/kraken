@@ -32,8 +32,9 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "core-js": "npm:core-js@1.2.6",
-    "css": "github:systemjs/plugin-css@0.1.20",
+    "css": "github:systemjs/plugin-css@0.1.23",
     "es6-shim": "github:es-shims/es6-shim@0.35.0",
+    "font-awesome": "npm:font-awesome@4.6.3",
     "jquery": "npm:jquery@3.0.0",
     "nodelibs": "github:jspm/nodelibs@0.1.9",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
@@ -247,6 +248,9 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "create-hash": "npm:create-hash@1.1.2",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0"
+    },
+    "npm:font-awesome@4.6.3": {
+      "css": "github:systemjs/plugin-css@0.1.23"
     },
     "npm:hash.js@1.0.3": {
       "inherits": "npm:inherits@2.0.1"

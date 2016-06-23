@@ -11,10 +11,12 @@ import routes from './routes';
 import templateComponents from './template/template.module';
 import components from './components/components.module';
 import pages from './pages/pages.module';
+import services from './services/services.module';
 
 export default angular.module('app', [
     'ngRoute',
     templateComponents.name,
     components.name,
-    pages.name ])
+    pages.name,
+    services.name ])
     .config(routes);

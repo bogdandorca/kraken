@@ -1,0 +1,49 @@
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal {
+  width: 50%;
+  height: auto;
+  max-height: 70%;
+  top: 10%;
+  left: 25%;
+  position: relative;
+  z-index: 20;
+  display: block;
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  border-radius: 3px;
+  padding: 10px;
+  header {
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+    h2 {
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  main {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+.tint {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0f0f0f;
+  opacity: 0.6;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
