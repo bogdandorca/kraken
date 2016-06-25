@@ -2,6 +2,9 @@
  * Main module that integrates all the libraries and the adjacent modules
  */
 
+// Libraries
+import 'toastr';
+
 // Angular libraries
 import angular from 'angular';
 import ngRoute from 'angular-route';

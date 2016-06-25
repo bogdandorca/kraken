@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format esm";
 import { ListWrapper, StringMapWrapper } from 'angular2/src/facade/collection';
 import { normalizeBlank, isPresent, global } from 'angular2/src/facade/lang';
 import { ObservableWrapper, EventEmitter } from 'angular2/src/facade/async';

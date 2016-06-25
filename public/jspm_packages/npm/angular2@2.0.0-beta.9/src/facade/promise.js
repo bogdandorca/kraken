@@ -1,4 +1,5 @@
 /* */ 
+"format cjs";
 'use strict';var PromiseWrapper = (function () {
     function PromiseWrapper() {
     }

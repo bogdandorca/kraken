@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format global";
 'use strict';
 describe('longStackTraceZone', function () {
     var log;

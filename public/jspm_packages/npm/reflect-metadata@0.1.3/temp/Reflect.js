@@ -1,3 +1,5 @@
+/* */ 
+"format cjs";
 /*! *****************************************************************************
 Copyright (C) Microsoft. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -839,7 +841,7 @@ var Reflect;
             typeof module === "object" &&
             typeof module.exports === "object" &&
             typeof require === "function";
-        var nodeCrypto = isNode && require('@empty');
+        var nodeCrypto = isNode && require("crypto");
         var hasOwn = Object.prototype.hasOwnProperty;
         var keys = {};
         var rootKey = CreateUniqueKey();

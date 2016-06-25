@@ -1,13 +1,17 @@
 class NavbarController {
-    constructor($omd) {
-        this._modalService = $omd;
+    constructor($mdSidenav) {
+        this._mdSidenav = $mdSidenav;
     }
-
-    openModal(name) {
-        this._modalService.openModal(name);
+    openSidebar(module) {
+        if(module === 'login') {
+            this._mdSidenav('register').close();
+        } else {
+            this._mdSidenav('login').close();
+        }
+        this._mdSidenav(module).toggle();
     }
 }
 
-NavbarController.$inject = [ '$omd' ];
+NavbarController.$inject = [ '$mdSidenav' ];
 
 export default NavbarController;

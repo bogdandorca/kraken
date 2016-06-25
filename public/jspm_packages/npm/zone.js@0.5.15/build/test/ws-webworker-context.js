@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format global";
 importScripts('/base/test/zone_worker_entry_point.ts');
 zone.fork().run(function () {
     var websocket = new WebSocket('ws://localhost:8001');

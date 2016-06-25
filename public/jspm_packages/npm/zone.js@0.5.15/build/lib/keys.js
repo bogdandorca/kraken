@@ -1,3 +1,5 @@
+/* */ 
+"format cjs";
 /**
  * Creates keys for `private` properties on exposed objects to minimize interactions with other codebases.
  */

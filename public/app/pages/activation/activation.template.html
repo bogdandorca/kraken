@@ -1,0 +1,10 @@
+<!-- Replace with spinner -->
+<h1 ng-if="!$ctrl.completed && $ctrl.noError">You account is being activated</h1>
+<div ng-if="$ctrl.completed && $ctrl.noError">
+    <h1>You account has been activated</h1>
+    <p>You have been automatically logged in</p>
+</div>
+<div ng-if="$ctrl.completed && !$ctrl.noError">
+    <h1>Error</h1>
+    <p>An error has occurred while trying to activate your account</p>
+</div>

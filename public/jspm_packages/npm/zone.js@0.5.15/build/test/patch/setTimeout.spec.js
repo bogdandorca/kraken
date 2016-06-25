@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format global";
 'use strict';
 describe('setTimeout', function () {
     it('should work with setTimeout', function (done) {

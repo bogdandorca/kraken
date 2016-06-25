@@ -4,8 +4,10 @@
 
 // Components
 import navbarComponent from './navbar/navbar.component';
-import headerComponent from './header/header.component';
+import loginComponent from './login/login.component';
+import registerComponent from './register/register.component';
 
 export default angular.module('templateComponents', [])
-    .component('navbarComponent', navbarComponent)
-    .component('headerComponent', headerComponent);
+    .component('navbar', navbarComponent)
+    .component('login', loginComponent)
+    .component('register', registerComponent);

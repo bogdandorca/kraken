@@ -1,4 +1,5 @@
 /* */ 
+"format cjs";
 'use strict';
 // Patch jasmine's it and fit functions so that the `done` callback always resets the zone
 // to the jasmine zone, which should be the root zone. (angular/zone.js#91)

@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format global";
 'use strict';
 describe('Microtasks', function () {
     it('should execute microtasks enqueued in the root zone', function (done) {

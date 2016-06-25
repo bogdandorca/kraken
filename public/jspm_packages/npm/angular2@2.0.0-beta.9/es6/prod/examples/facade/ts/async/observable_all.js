@@ -1,4 +1,4 @@
 /* */ 
-"format cjs";
+"format esm";
 import 'rxjs';
 // #enddocregion

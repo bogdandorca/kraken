@@ -1,3 +1,5 @@
+/* */ 
+"format cjs";
 // Detect and setup WTF.
 var wtfTrace = null;
 var wtfEvents = null;

@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format global";
 describe('Util', function () {
     describe('Custom assertions', function () {
         var child = global.zone.fork();

@@ -1,33 +1,32 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Mobile -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Kraken</a>
+            <a class="navbar-brand" href="#">
+                Kraken
+            </a>
         </div>
-        <!-- Desktop -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse">
+            <!--<div class="navbar-text navbar-right">-->
+                <!--&lt;!&ndash; TODO: Change this to be dynamic &ndash;&gt;-->
+                <!--Welcome, Bogdan!-->
+            <!--</div>-->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <omd-control modal-name="login" title="Login" type="a"></omd-control>
+                    <a href="" ng-click="$ctrl.openSidebar('login')">Log In</a>
                 </li>
                 <li>
-                    <omd-control modal-name="register" title="Register" type="a"></omd-control>
+                    <a href="" ng-click="$ctrl.openSidebar('register')">Register</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Modals -->
-<omd name="register" title="Register">
-    <register-component></register-component>
-</omd>
-<omd name="login" title="Log In">
-    <login-component></login-component>
-</omd>
+<div layout="row">
+    <md-sidenav md-component-id="login" class="md-sidenav-right">
+        <login></login>
+    </md-sidenav>
+    <md-sidenav md-component-id="register" class="md-sidenav-right">
+        <register></register>
+    </md-sidenav>
+</div>

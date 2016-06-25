@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format global";
 'use strict';
 describe('setInterval', function () {
     it('should work with setInterval', function (done) {

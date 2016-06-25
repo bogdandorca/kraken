@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format global";
 'use strict';
 var log = [];
 var logArgs = [];

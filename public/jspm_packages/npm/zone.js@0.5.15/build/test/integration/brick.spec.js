@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format global";
 // brick does some funny stuff with property descriptors
 // see:
 //

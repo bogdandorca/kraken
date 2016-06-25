@@ -1,21 +1,48 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #e6e6e6;
+  background-color: #e6e6e6 !important;
 }
-.view-body {
-  margin-top: 60px;
+.view-container {
+  margin-top: 50px;
+  background-color: $bright-color;
+  padding: 30px;
 }
-nav {
-  &.navbar {
-    z-index: 10;
+.container {
+  width: 80%;
+}
+.navbar-brand {
+  color: $bright-color !important;
+  &:hover {
+    color: $grey-color !important;
+  }
+  &:focus {
+    color: $grey-color !important;
   }
 }
-// TODO: Move this to a separate file
-.panel {
-  background-color: #fff;
-  border: 1px solid;
-  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
-  border-radius: 3px;
-  padding-top: 10px;
+.navbar-default .navbar-nav {
+  li {
+    a {
+      color: $bright-color;
+      &:hover {
+        color: $grey-color;
+      }
+      &:focus {
+        color: $grey-color;
+      }
+    }
+  }
+}
+
+.navbar-fixed-top {
+  z-index: 10;
+}
+
+.md-primary {
+  background-color: $main-color !important;
+  color: $bright-color !important;
+}
+
+.toast {
+  top: 60px;
 }

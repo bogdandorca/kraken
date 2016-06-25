@@ -1,3 +1,5 @@
+/* */ 
+"format cjs";
 // TODO(vicb): Create a benchmark for the different methods & the usage of the queue
 // see https://github.com/angular/zone.js/issues/97
 // It is required to initialize hasNativePromise before requiring es6-promise otherwise es6-promise would

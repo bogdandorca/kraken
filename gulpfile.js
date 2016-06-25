@@ -8,7 +8,7 @@ gulp.task('default', 'Confirmation that gulp is set-up', function() {
 });
 
 gulp.task('sass', 'Compile scss files', function() {
-    return gulp.src(['./public/app/**/*.scss', './public/assets/styles/**/*.scss'], {base: "./"})
+    return gulp.src(['./public/assets/styles/**/*.scss', './public/app/**/*.scss'], {base: "./"})
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./'));
 });

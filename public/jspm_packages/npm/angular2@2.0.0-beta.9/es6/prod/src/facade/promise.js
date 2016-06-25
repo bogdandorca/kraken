@@ -1,5 +1,5 @@
 /* */ 
-"format cjs";
+"format esm";
 export class PromiseWrapper {
     static resolve(obj) { return Promise.resolve(obj); }
     static reject(obj, _) { return Promise.reject(obj); }
