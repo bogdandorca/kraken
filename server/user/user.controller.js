@@ -4,12 +4,12 @@ var wrap = require('co-monk');
 var users = wrap(db.get('users'));
 var co = require('co');
 var indicative = require('indicative');
-var jwt = require('jwt-simple');
 
 var validationRules = require('../conf/validationRules');
 var User = require('./user.model');
 var emailService = require('../email/email.interface');
 var Response = require('../response/response');
+var AuthInterface = require('../auth/auth.interface');
 
 class UserController {
     constructor() {
@@ -27,16 +27,20 @@ class UserController {
         };
     }
 
-    *getUser(id, showPasswordAndSalt) {
-        return yield users.findOne( { _id: id }, { sort: {}, fields: {
-            password: showPasswordAndSalt,
-            salt: showPasswordAndSalt
+    *getUser(id, secure) {
+        var user = yield users.findOne( { _id: id }, { sort: {}, fields: {
+            password: secure,
+            salt: secure
         }});
+        if(user) {
+            return new Response(200, user);
+        } else {
+            return new Response(404, 'User not found');
+        }
     }
     *getCurrentUser(token) {
         if(token) {
-            var userId = jwt.decode(token, config.getSecret());
-            var user = yield this.getUser(userId, false);
+            var user = yield AuthInterface.isValidToken(token);
             if(user) {
                 return new Response(200, user);
             } else {
@@ -47,10 +51,11 @@ class UserController {
         }
     }
     *getUsers() {
-        return yield users.find( { active: true }, { sort: { lastName: 1 }, fields: {
+        var userList = yield users.find( { active: true }, { sort: { lastName: 1 }, fields: {
             password: 0,
             salt: 0
         }});
+        return new Response(200, userList);
     }
     *updateUser(userDetails) {
         var isValid = co.wrap(this.isValid);

@@ -2,20 +2,21 @@ var app = require('koa')();
 var router = require('koa-router')();
 var parse = require('co-body');
 var UserController = require('./user.controller');
+var AuthInterface = require('../auth/auth.interface');
 
 router
-    .get('/:id', function *() {
+    .get('/:id', AuthInterface.currentUserOnly, function *() {
         var response = yield UserController.getUser(this.params.id, false);
         this.status = response.code;
         this.body = response.content;
     })
-    .get('/current', function*() {
+    .get('/current', AuthInterface.userOnly, function*() {
         var token = this.cookies.get('kcie');
         var response = yield UserController.getCurrentUser(token);
         this.status = response.code;
         this.body = response.content;
     })
-    .get('/', function *() {
+    .get('/', AuthInterface.adminOnly, function *() {
         var response = yield UserController.getUsers();
         this.status = response.code;
         this.body = response.content;
@@ -31,13 +32,16 @@ router
         this.status = response.code;
         this.body = response.content;
     })
-    .put('/', function *() {
+    .put('/:id', AuthInterface.currentUserOnly, function *() {
+        // Make sure the user ID matches the current user's id
         var user = yield parse(this);
+        user._id = this.params.id;
+
         var response = yield UserController.updateUser(user);
         this.status = response.code;
         this.body = response.content;
     })
-    .delete('/:id', function *() {
+    .delete('/:id', AuthInterface.currentUserOnly, function *() {
         var response = yield UserController.removeUser(this.params.id);
         this.status = response.code;
         this.body = response.content;

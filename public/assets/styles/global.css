@@ -1,7 +1,8 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #e6e6e6 !important; }
+  background-color: #e6e6e6 !important;
+  color: #333; }
 
 .view-container {
   margin-top: 50px;
@@ -25,6 +26,15 @@ body {
   .navbar-default .navbar-nav li a:focus {
     color: #e6e6e6; }
 
+.navbar-text {
+  color: #fff !important; }
+  .navbar-text a {
+    color: #fff; }
+    .navbar-text a:hover {
+      color: #e6e6e6; }
+    .navbar-text a:focus {
+      color: #e6e6e6; }
+
 .navbar-fixed-top {
   z-index: 30; }
 
@@ -40,6 +50,9 @@ body {
 
 .toast {
   top: 60px; }
+
+:focus {
+  outline: -webkit-focus-ring-color auto 0 !important; }
 
 .sidebar-title-container {
   padding: 20px 20px 0 20px; }

@@ -1,31 +1,19 @@
 class AuthService {
-    constructor($http, $cookies, $timeout) {
+    constructor($http, $cookies) {
         this._http = $http;
         this._cookies = $cookies;
-        this._timeout = $timeout;
 
         this.cookieName = 'ckie';
-
-        this.getCookieData();
+        this.setUserData();
+        this.user = null;
     }
     login(credentials) {
         return this._http.post('/api/auth/login', credentials);
     }
     logout() {
-        this.user = null;
-        this._cookies.remove(this.cookieName);
-    }
-    getCookieData() {
-        // TODO: Remove this
-        this._timeout(() => {
-            var userToken = this._cookies.get(this.cookieName);
-
-            if(userToken) {
-                this.setUserData();
-            } else {
-                this.user = null;
-            }
-        }, 0);
+        this._http.post('/api/auth/logout').then(() => {
+            this.user = null;
+        });
     }
     setUserData() {
         this._http.get('/api/users/current')
@@ -38,8 +26,11 @@ class AuthService {
     getCurrentUser() {
         return this.user;
     }
+    isLoggedIn() {
+        return !!this.user;
+    }
 }
 
-AuthService.$inject = [ '$http', '$cookies', '$timeout' ];
+AuthService.$inject = [ '$http', '$cookies' ];
 
 export default AuthService;

@@ -1,0 +1,12 @@
+<div class="row" ng-if="$ctrl.isLoggedIn()">
+    <div class="menu-container">
+        <!-- TODO: Add dynamic class, based on the number of elements <if the user is admin, some elements will be added> -->
+        <ul class="menu-elements">
+            <li class="menu-element" ng-repeat="page in $ctrl.pages track by $index" ng-click="$ctrl.goTo(page.name, $index+1)">
+                <h2>{{page.title}}</h2>
+            </li>
+        </ul>
+        <!-- TODO: Add dynamic class for width -->
+        <span class="underline quarter" ng-class="$ctrl.underlineIndex"></span>
+    </div>
+</div>

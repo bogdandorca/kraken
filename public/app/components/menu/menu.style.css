@@ -1,0 +1,32 @@
+.menu-container {
+  padding: 0 20px; }
+
+.menu-elements {
+  list-style: none;
+  padding: 0;
+  border-bottom: 1px solid #e6e6e6; }
+
+.menu-element {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+  margin-bottom: -2px; }
+  .menu-element h2 {
+    font-size: 2em;
+    color: #333; }
+
+.underline {
+  display: block;
+  border-bottom: 3px solid #2294cc;
+  margin-top: -12px;
+  transition: all .3s ease-in; }
+  .underline.quarter {
+    width: 25%; }
+    .underline.quarter.p-1 {
+      margin-left: 0; }
+    .underline.quarter.p-2 {
+      margin-left: 24%; }
+    .underline.quarter.p-3 {
+      margin-left: 48%; }
+    .underline.quarter.p-4 {
+      margin-left: 72%; }

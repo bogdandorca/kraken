@@ -2,6 +2,11 @@ class NavbarController {
     constructor($mdSidenav, $authService) {
         this._mdSidenav = $mdSidenav;
         this._authService = $authService;
+
+        this.user = null;
+    }
+    setUser() {
+        this.user = this._authService.getCurrentUser();
     }
     isLoggedIn() {
         return this._authService.getCurrentUser();

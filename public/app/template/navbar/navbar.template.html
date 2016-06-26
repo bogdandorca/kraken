@@ -6,8 +6,8 @@
             </a>
         </div>
         <div class="collapse navbar-collapse">
-            <div class="navbar-text navbar-right" ng-if="$ctrl.isLoggedIn()">
-                Welcome, Bogdan!
+            <div class="navbar-text navbar-right" ng-if="$ctrl.isLoggedIn()" ng-init="$ctrl.setUser()">
+                Welcome, {{$ctrl.user.firstName}}!
                 <a href="" ng-click="$ctrl.logOut()">Log Out</a>
             </div>
             <ul class="nav navbar-nav navbar-right" ng-if="!$ctrl.isLoggedIn()">
