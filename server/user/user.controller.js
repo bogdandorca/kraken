@@ -4,6 +4,7 @@ var wrap = require('co-monk');
 var users = wrap(db.get('users'));
 var co = require('co');
 var indicative = require('indicative');
+var jwt = require('jwt-simple');
 
 var validationRules = require('../conf/validationRules');
 var User = require('./user.model');
@@ -31,6 +32,19 @@ class UserController {
             password: showPasswordAndSalt,
             salt: showPasswordAndSalt
         }});
+    }
+    *getCurrentUser(token) {
+        if(token) {
+            var userId = jwt.decode(token, config.getSecret());
+            var user = yield this.getUser(userId, false);
+            if(user) {
+                return new Response(200, user);
+            } else {
+                return new Response(404, 'The session is not active anymore');
+            }
+        } else {
+            return new Response(403, 'Not authorized');
+        }
     }
     *getUsers() {
         return yield users.find( { active: true }, { sort: { lastName: 1 }, fields: {

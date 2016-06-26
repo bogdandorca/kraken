@@ -11,6 +11,10 @@ var config = require('./server/conf/config');
 var userModule = require('./server/user/app');
 app.use(mount('/api/users', userModule));
 
+// Auth
+var authModule = require('./server/auth/app');
+app.use(mount('/api/auth', authModule));
+
 app.use(serve('./public'));
 
 app.listen(config.getPort(), function () {

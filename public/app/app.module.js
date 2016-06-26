@@ -9,6 +9,7 @@ import 'toastr';
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngMaterial from 'angular-material';
+import ngCookies from 'angular-cookies';
 import routes from './routes';
 
 // Modules
@@ -20,6 +21,7 @@ import services from './services/services.module';
 export default angular.module('app', [
     'ngRoute',
     'ngMaterial',
+    'ngCookies',
     templateComponents.name,
     components.name,
     pages.name,

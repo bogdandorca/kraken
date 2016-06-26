@@ -6,11 +6,11 @@
             </a>
         </div>
         <div class="collapse navbar-collapse">
-            <!--<div class="navbar-text navbar-right">-->
-                <!--&lt;!&ndash; TODO: Change this to be dynamic &ndash;&gt;-->
-                <!--Welcome, Bogdan!-->
-            <!--</div>-->
-            <ul class="nav navbar-nav navbar-right">
+            <div class="navbar-text navbar-right" ng-if="$ctrl.isLoggedIn()">
+                Welcome, Bogdan!
+                <a href="" ng-click="$ctrl.logOut()">Log Out</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right" ng-if="!$ctrl.isLoggedIn()">
                 <li>
                     <a href="" ng-click="$ctrl.openSidebar('login')">Log In</a>
                 </li>

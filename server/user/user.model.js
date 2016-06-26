@@ -1,6 +1,7 @@
 var crypto = require('crypto');
 
 class User {
+    // TODO: Add creation date for users
     constructor(user) {
         this.firstName = user.firstName;
         this.lastName = user.lastName;

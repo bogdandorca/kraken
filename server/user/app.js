@@ -9,6 +9,12 @@ router
         this.status = response.code;
         this.body = response.content;
     })
+    .get('/current', function*() {
+        var token = this.cookies.get('kcie');
+        var response = yield UserController.getCurrentUser(token);
+        this.status = response.code;
+        this.body = response.content;
+    })
     .get('/', function *() {
         var response = yield UserController.getUsers();
         this.status = response.code;

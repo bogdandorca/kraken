@@ -26,7 +26,13 @@ body {
     color: #e6e6e6; }
 
 .navbar-fixed-top {
-  z-index: 10; }
+  z-index: 30; }
+
+.md-sidenav-right {
+  z-index: 20; }
+
+.md-sidenav-backdrop {
+  z-index: 10 !important; }
 
 .md-primary {
   background-color: #2294cc !important;

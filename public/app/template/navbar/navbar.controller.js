@@ -1,6 +1,13 @@
 class NavbarController {
-    constructor($mdSidenav) {
+    constructor($mdSidenav, $authService) {
         this._mdSidenav = $mdSidenav;
+        this._authService = $authService;
+    }
+    isLoggedIn() {
+        return this._authService.getCurrentUser();
+    }
+    logOut() {
+        this._authService.logout();
     }
     openSidebar(module) {
         if(module === 'login') {
@@ -12,6 +19,6 @@ class NavbarController {
     }
 }
 
-NavbarController.$inject = [ '$mdSidenav' ];
+NavbarController.$inject = [ '$mdSidenav', '$authService' ];
 
 export default NavbarController;
