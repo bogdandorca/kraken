@@ -1,3 +1,13 @@
 <div class="row">
-    <h1>Add</h1>
+    <div class="col-md-6">
+        <md-input-container class="md-block">
+            <label>Title</label>
+            <input type="text" name="title" ng-model="$ctrl.recipe.title" minlength="2" md-maxlength="50" required/>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Description</label>
+            <textarea ng-model="$ctrl.recipe.description" md-maxlength="150" rows="5" style="height: 135px;" ></textarea>
+            <div class="md-resize-handle"></div>
+        </md-input-container>
+    </div>
 </div>

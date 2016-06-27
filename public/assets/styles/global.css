@@ -54,6 +54,9 @@ body {
 :focus {
   outline: -webkit-focus-ring-color auto 0 !important; }
 
+menu {
+  padding: 0; }
+
 .sidebar-title-container {
   padding: 20px 20px 0 20px; }
 
