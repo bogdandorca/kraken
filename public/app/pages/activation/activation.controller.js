@@ -1,7 +1,10 @@
 class ActivationController {
-    constructor($routeParams, $userService) {
+    constructor($routeParams, $location, $userService, $authService, $toastrService) {
         this._routeParams = $routeParams;
+        this._location = $location;
         this._userService = $userService;
+        this._authService = $authService;
+        this._toastrService = $toastrService;
 
         this.completed = false;
         this.noError = true;
@@ -12,8 +15,12 @@ class ActivationController {
     
     activateAccount() {
         this._userService.activateAccount(this.token)
-            .then((response) => {
+            .then(() => {
                 this.completed = true;
+                this._authService.setUserData();
+                this._toastrService.success('Your account has been activated!');
+                this._location.path('/');
+
             }, (err) => {
                 this.completed = true;
                 this.noError = false;
@@ -21,6 +28,6 @@ class ActivationController {
     }
 }
 
-ActivationController.$inject = [ '$routeParams', '$userService' ];
+ActivationController.$inject = [ '$routeParams', '$location', '$userService', '$authService', '$toastrService' ];
 
 export default ActivationController;

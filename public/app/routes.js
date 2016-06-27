@@ -16,6 +16,9 @@ var config = function($routeProvider) {
         .when('/activate/:token', {
             template: '<activation-page></activation-page>'
         })
+        .when('/profile', {
+            template: '<profile-page></profile-page>'
+        })
         .otherwise({
             redirectTo: '/'
         });

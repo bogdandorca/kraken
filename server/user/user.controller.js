@@ -4,6 +4,7 @@ var wrap = require('co-monk');
 var users = wrap(db.get('users'));
 var co = require('co');
 var indicative = require('indicative');
+var moment = require('moment');
 
 var validationRules = require('../conf/validationRules');
 var User = require('./user.model');
@@ -67,7 +68,8 @@ class UserController {
                 yield users.updateById( userDetails._id, { $set: {
                     firstName: userDetails.firstName,
                     lastName: userDetails.lastName,
-                    email: userDetails.email
+                    email: userDetails.email,
+                    lastUpdate: moment().format('x')
                 }});
                 var user = yield this.getUser(userDetails._id, false);
                 return new Response(200, user);

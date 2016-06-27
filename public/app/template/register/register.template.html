@@ -1,12 +1,12 @@
 <div class="sidebar-title-container">
     <h2>Register</h2>
 </div>
-<form name="registerForm">
+<form name="$ctrl.registerForm">
     <div class="sidebar-input-container">
         <md-input-container class="md-block">
             <label>First Name</label>
             <input type="text" name="firstName" ng-model="$ctrl.user.firstName" minlength="2" md-maxlength="50" required/>
-            <div ng-messages="registerForm.firstName.$error" ng-show="registerForm.firstName.$dirty">
+            <div ng-messages="$ctrl.registerForm.firstName.$error" ng-show="registerForm.firstName.$dirty">
                 <div ng-message="require">This field is required!</div>
                 <div ng-message="minlength">This field should contain at least 2 characters!</div>
                 <div ng-message="md-maxlength">This field cannot exceed 50 characters!</div>
@@ -14,34 +14,44 @@
         </md-input-container>
         <md-input-container class="md-block">
             <label>Last Name</label>
-            <input type="text" name="lastName" ng-model="$ctrl.user.lastName" md-minlength="2" md-maxlength="50" required/>
-            <div ng-messages="registerForm.lastName.$error" ng-show="registerForm.lastName.$dirty">
+            <input type="text" name="lastName" ng-model="$ctrl.user.lastName" minlength="2" md-maxlength="50" required/>
+            <div ng-messages="$ctrl.registerForm.lastName.$error" ng-show="registerForm.lastName.$dirty">
                 <div ng-message="require">This field is required!</div>
-                <div ng-message="md-minlength">This field should contain at least 2 characters!</div>
+                <div ng-message="minlength">This field should contain at least 2 characters!</div>
                 <div ng-message="md-maxlength">This field cannot exceed 50 characters!</div>
             </div>
         </md-input-container>
         <md-input-container class="md-block">
             <label>Email</label>
-            <input type="email" name="email" ng-model="$ctrl.user.email" required/>
-            <div ng-messages="registerForm.email.$error" ng-show="registerForm.email.$dirty">
+            <input type="email" name="email" ng-model="$ctrl.user.email" minlength="10" md-maxlength="100" required/>
+            <div ng-messages="$ctrl.registerForm.email.$error" ng-show="registerForm.email.$dirty">
                 <div ng-message="require">This field is required!</div>
-                <div ng-message="md-minlength">This field should contain at least 2 characters!</div>
-                <div ng-message="md-maxlength">This field cannot exceed 50 characters!</div>
+                <div ng-message="minlength">This field should contain at least 10 characters!</div>
+                <div ng-message="md-maxlength">This field cannot exceed 100 characters!</div>
+                <div ng-messages="email">The email address is invalid!</div>
             </div>
         </md-input-container>
         <md-input-container class="md-block">
             <label>Password</label>
-            <input type="password" name="password" ng-model="$ctrl.user.password" required/>
-            <div ng-messages="registerForm.password.$error" ng-show="registerForm.password.$dirty"></div>
+            <input type="password" name="password" ng-model="$ctrl.user.password" minlength="6" md-maxlength="100"  required/>
+            <div ng-messages="$ctrl.registerForm.password.$error" ng-show="registerForm.password.$dirty">
+                <div ng-message="require">This field is required!</div>
+                <div ng-message="minlength">This field should contain at least 6 characters!</div>
+                <div ng-message="md-maxlength">This field cannot exceed 100 characters!</div>
+            </div>
         </md-input-container>
         <md-input-container class="md-block">
             <label>Password Confirmation</label>
             <input type="password" name="passwordConfirmation" ng-model="$ctrl.passwordConfirmation" required/>
-            <div ng-messages="registerForm.passwordConfirmation.$error" ng-show="registerForm.passwordConfirmation.$dirty"></div>
+            <div ng-messages="$ctrl.registerForm.passwordConfirmation.$error"
+                 ng-show="$ctrl.registerForm.passwordConfirmation.$dirty ||
+                 ($ctrl.registerForm.passwordConfirmation.$dirty && $ctrl.user.password !== $ctrl.passwordConfirmation)">
+                <div ng-message="require">This field is required!</div>
+                <div ng-if="$ctrl.user.password !== $ctrl.passwordConfirmation">The passwords do not match</div>
+            </div>
         </md-input-container>
     </div>
     <div class="sidebar-button-container">
-        <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="$ctrl.register()">Register</md-button>
+        <md-button type="submit" class="md-raised md-primary md-button md-ink-ripple" ng-click="$ctrl.register()">Register</md-button>
     </div>
 </form>

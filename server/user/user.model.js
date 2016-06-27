@@ -1,4 +1,5 @@
 var crypto = require('crypto');
+var moment = require('moment');
 
 class User {
     // TODO: Add creation date for users
@@ -16,6 +17,8 @@ class User {
          * 2 = super-admin
          */
         this.role = 0;
+        this.creationDate = moment().format('x');
+        this.lastUpdate = moment().format('x');
     }
 }
 

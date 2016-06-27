@@ -22,6 +22,9 @@ class AuthInterface {
         var requestedUserId = this.params.id;
         yield AuthController.currentUserOnly(token, requestedUserId, next);
     }
+    getToken(id) {
+        return AuthController.getToken(id);
+    }
 
     static getInstance() {
         if(!this.instance) {

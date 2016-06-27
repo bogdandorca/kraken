@@ -16,10 +16,7 @@ class AuthController {
                 if(user.active === true) {
                     var encryptedPassword = crypto.pbkdf2Sync(credentials.password, user.salt, 10000, 64).toString('base64');
                     if(encryptedPassword === user.password) {
-                        var payload = {
-                            id: user._id
-                        };
-                        return jwt.sign(payload, config.getSecret(), { expiresIn: '2d' });
+                        return this.getToken(user._id);
                     } else {
                         return new Response(404, 'Please make sure the correct email and password have been entered');
                     }
@@ -32,6 +29,12 @@ class AuthController {
         } else {
             return new Response(404, 'The required credentials have not been provided');
         }
+    }
+    getToken(id) {
+        var payload = {
+            id
+        };
+        return jwt.sign(payload, config.getSecret(), { expiresIn: '2d' });
     }
     *userOnly(token, next) {
         if(token) {

@@ -1,7 +1,8 @@
 class MenuController {
-    constructor($location, $authService) {
+    constructor($location, $authService, $rootScope) {
         this._location = $location;
         this._authService = $authService;
+        this._rootScope = $rootScope;
 
         this.pages = [
             {
@@ -26,21 +27,29 @@ class MenuController {
             }
         ];
 
-        this.currentPage = this._location.path();
         this.underlineIndex = '';
         this.setPageIndex();
+
+        this._rootScope.$on('$locationChangeStart', () => {
+            this.setPageIndex();
+        });
     }
 
     setPageIndex() {
+        this.currentPage = this._location.path();
+        var indexExists = false;
         for(var i=0; i<this.pages.length; i++) {
             if(this.currentPage === this.pages[i].url) {
+                indexExists = true;
                 this.underlineIndex = `p-${i+1}`;
             }
+        }
+        if(!indexExists) {
+            this.underlineIndex = 'p-none'
         }
     }
     goTo(page, index) {
         this.underlineIndex = `p-${index}`;
-        console.log(this.underlineIndex);
         this._location.path(`/${page}`);
     }
     isLoggedIn() {
@@ -48,6 +57,6 @@ class MenuController {
     }
 }
 
-MenuController.$inject = [ '$location', '$authService' ];
+MenuController.$inject = [ '$location', '$authService', '$rootScope' ];
 
 export default MenuController;

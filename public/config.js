@@ -28,6 +28,7 @@ System.config({
     "angular": "github:angular/bower-angular@1.5.7",
     "angular-cookies": "github:angular/bower-angular-cookies@1.5.7",
     "angular-material": "github:angular/bower-material@1.0.9",
+    "angular-messages": "github:angular/bower-angular-messages@1.5.7",
     "angular-route": "github:angular/bower-angular-route@1.5.7",
     "angular2": "npm:angular2@2.0.0-beta.9",
     "babel": "npm:babel-core@5.8.38",
@@ -55,6 +56,9 @@ System.config({
       "angular": "github:angular/bower-angular@1.5.7"
     },
     "github:angular/bower-angular-cookies@1.5.7": {
+      "angular": "github:angular/bower-angular@1.5.7"
+    },
+    "github:angular/bower-angular-messages@1.5.7": {
       "angular": "github:angular/bower-angular@1.5.7"
     },
     "github:angular/bower-angular-route@1.5.7": {

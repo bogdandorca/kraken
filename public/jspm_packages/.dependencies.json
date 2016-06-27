@@ -133,5 +133,8 @@
     "angular-animate": "jspm:angular-animate@^1.5.0",
     "angular-aria": "jspm:angular-aria@^1.5.0",
     "css": "jspm:css@^0.1.0"
+  },
+  "github:angular/bower-angular-messages@1.5.7": {
+    "angular": "jspm:angular@^1.5.0"
   }
 }

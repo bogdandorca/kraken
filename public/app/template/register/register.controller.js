@@ -15,13 +15,16 @@ class RegisterController {
     }
 
     register() {
-        // TODO: Validate
-        this._userService.createUser(this.user).then(() => {
-            this._toastrService.success('You account has successfuly been created');
-        }, (error) => {
-            this._toastrService.error(error.data);
-        });
-        this.closeSidebar();
+        if(this.registerForm.$valid && this.user.password === this.passwordConfirmation) {
+            this._userService.createUser(this.user).then(() => {
+                this._toastrService.success('You account has successfuly been created');
+            }, (error) => {
+                this._toastrService.error(error.data);
+            });
+            this.closeSidebar();
+        } else {
+            this.registerForm.$setSubmitted();
+        }
     }
     closeSidebar() {
         this._mdSidenav('register').toggle();

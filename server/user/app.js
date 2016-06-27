@@ -29,6 +29,10 @@ router
     })
     .post('/activate/:token', function *() {
         var response = yield UserController.activateAccount(this.params.token);
+        var token = AuthInterface.getToken(response.content._id);
+        this.cookies.set('kcie', token, {
+            httpOnly: false
+        });
         this.status = response.code;
         this.body = response.content;
     })

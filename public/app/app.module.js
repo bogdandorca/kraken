@@ -10,6 +10,7 @@ import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngMaterial from 'angular-material';
 import ngCookies from 'angular-cookies';
+import ngMessages from 'angular-messages';
 import routes from './routes';
 
 // Modules
@@ -22,6 +23,7 @@ export default angular.module('app', [
     'ngRoute',
     'ngMaterial',
     'ngCookies',
+    'ngMessages',
     templateComponents.name,
     components.name,
     pages.name,

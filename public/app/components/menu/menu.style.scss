@@ -13,6 +13,13 @@
   width: 24%;
   text-align: center;
   margin-bottom: -2px;
+  transition: all .2s ease-in;
+  border-bottom: 3px solid transparent;
+  z-index: 10;
+  position: relative;
+  &:hover {
+    border-bottom: 3px solid #ff934c;
+  }
   h2 {
     font-size: 2em;
     color: $dark-color;
@@ -20,12 +27,17 @@
 }
 .underline {
   display: block;
+  position: relative;
   border-bottom: 3px solid $main-color;
   margin-top: -12px;
   transition: all .3s ease-in;
+  z-index: 20;
   // Width
   &.quarter {
-    width: 25%;
+    width: 24%;
+    &.p-none {
+      border-bottom-color: transparent !important;
+    }
     &.p-1 {
       margin-left: 0;
     }
