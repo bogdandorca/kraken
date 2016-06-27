@@ -1,16 +1,29 @@
 <div class="sidebar-title-container">
     <h2>Log In</h2>
 </div>
-<div class="sidebar-input-container">
-    <md-input-container class="md-block">
-        <label>Email</label>
-        <input type="text" ng-model="$ctrl.user.email" required/>
-    </md-input-container>
-    <md-input-container class="md-block">
-        <label>Password</label>
-        <input type="password" ng-model="$ctrl.user.password" required/>
-    </md-input-container>
-</div>
-<div class="sidebar-button-container">
-    <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="$ctrl.login()">Log In</md-button>
-</div>
+<form name="$ctrl.loginForm">
+    <div class="sidebar-input-container">
+        <md-input-container class="md-block">
+            <label>Email</label>
+            <input type="email" name="email" ng-model="$ctrl.user.email" minlength="10" md-maxlength="100" required/>
+            <div ng-messages="$ctrl.loginForm.email.$error" ng-show="$ctrl.loginForm.email.$dirty">
+                <div ng-message="require">This field is required!</div>
+                <div ng-message="minlength">This field should contain at least 10 characters!</div>
+                <div ng-message="md-maxlength">This field cannot exceed 100 characters!</div>
+                <div ng-messages="email">The email address is invalid!</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Password</label>
+            <input type="password" name="password" ng-model="$ctrl.user.password" minlength="6" md-maxlength="100" required/>
+            <div ng-messages="$ctrl.loginForm.password.$error" ng-show="$ctrl.loginForm.password.$dirty">
+                <div ng-message="require">This field is required!</div>
+                <div ng-message="minlength">This field should contain at least 6 characters!</div>
+                <div ng-message="md-maxlength">This field cannot exceed 100 characters!</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div class="sidebar-button-container">
+        <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="$ctrl.login()">Log In</md-button>
+    </div>
+</form>

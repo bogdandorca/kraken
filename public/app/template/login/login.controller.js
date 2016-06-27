@@ -12,14 +12,18 @@ class LoginController {
     }
 
     login() {
-        this._authService.login(this.user)
-            .then((response) => {
-                this._toastrService.success(response.data);
-                this._authService.setUserData();
-            }, (error) => {
-                this._toastrService.error(error.data);
-            });
-        this.closeSidebar();
+        if(this.loginForm.$valid) {
+            this._authService.login(this.user)
+                .then((response) => {
+                    this._toastrService.success(response.data);
+                    this._authService.setUserData();
+                }, (error) => {
+                    this._toastrService.error(error.data);
+                });
+            this.closeSidebar();
+        } else {
+            this.loginForm.$setSubmitted();
+        }
     }
     closeSidebar() {
         this._mdSidenav('login').toggle();

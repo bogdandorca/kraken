@@ -1,0 +1,13 @@
+.sidebar-menu {
+  list-style: none;
+  width: 100%;
+  padding: 20px 0; }
+
+.sidebar-menu-element {
+  padding: 10px 20px;
+  border-top: 1px solid #e6e6e6;
+  cursor: pointer; }
+  .sidebar-menu-element.first {
+    border-top-color: transparent; }
+  .sidebar-menu-element:hover {
+    background-color: #e6e6e6; }

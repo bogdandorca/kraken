@@ -11,9 +11,6 @@ class NavbarController {
     isLoggedIn() {
         return this._authService.getCurrentUser();
     }
-    logOut() {
-        this._authService.logout();
-    }
     openSidebar(module) {
         if(module === 'login') {
             this._mdSidenav('register').close();

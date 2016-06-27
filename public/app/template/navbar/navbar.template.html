@@ -8,7 +8,9 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right" ng-if="$ctrl.isLoggedIn()">
                 <li>
-                    <a href="" ng-click="$ctrl.logOut()">Log Out</a>
+                    <a href="" ng-click="$ctrl.openSidebar('userMenu')">
+                        <i class="fa fa-bars"></i>
+                    </a>
                 </li>
             </ul>
             <div class="navbar-text navbar-right" ng-if="$ctrl.isLoggedIn()" ng-init="$ctrl.setUser()">
@@ -32,5 +34,8 @@
     </md-sidenav>
     <md-sidenav md-component-id="register" class="md-sidenav-right">
         <register></register>
+    </md-sidenav>
+    <md-sidenav md-component-id="userMenu" class="md-sidenav-right">
+        <user-menu></user-menu>
     </md-sidenav>
 </div>

@@ -1,0 +1,18 @@
+@import '../../../assets/styles/src/variables.scss';
+
+.sidebar-menu {
+  list-style: none;
+  width: 100%;
+  padding: 20px 0;
+}
+.sidebar-menu-element {
+  padding: 10px 20px;
+  border-top: 1px solid $grey-color;
+  cursor: pointer;
+  &.first {
+    border-top-color: transparent;
+  }
+  &:hover {
+    background-color: $grey-color;
+  }
+}
