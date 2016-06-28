@@ -1,0 +1,11 @@
+<div class="ingredients">
+    <h2>Ingredients</h2>
+    <div class="ingredient row" ng-repeat="ingredient in $ctrl.ingredients track by $index">
+        <ingredient></ingredient>
+        <span class="ingredient-remove" ng-click="$ctrl.removeIngredient($index)" ng-if="$ctrl.ingredients.length > 1">
+            <i class="fa fa-times"></i>
+        </span>
+    </div>
+
+    <a href="" ng-click="$ctrl.addIngredient()">Add Ingredient</a>
+</div>
